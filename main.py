@@ -51,7 +51,7 @@ PDiskBot = Client(
 
 @PDiskBot.on_message(filters.command("start") & ~filters.edited)
 async def start_handler(_, m: Message):
-    await m.reply_text("**Hiii! 😀\n\n🔸I'm Simple Movie Search Bot 🔍\n\n🔹I Can Search Movies For You 🎥\n\n🔸Just Type /request Movie Name 👇🏻\n\n🔹Example - /request Dhoom 2 ✅\n\n🔸Porn Ban Here! 🔞\n\n🔹U Can Add Me To Groups 💬\n\n🔸Devloped By @RoyalKrrishna 🕵️**", quote=True)
+    await m.reply_text("**Hiii! 😀\n\n🔸I'm Simple Movie Search Bot 🔍\n\n🔹I Can Search Movies For You 🎥\n\n🔸Just Type /request Movie Name 👇🏻\n\n🔹Example - /request Dhoom 2 ✅\n\n🔸Porn Ban Here! 🔞\n\n🔹You Can Add Me To Groups 💬\n\n🔸Devloped By @RoyalKrrishna 🕵️**", quote=True)
 
 
 @PDiskBot.on_message(filters.command("request", prefixes=["#", "/"]) & ~filters.edited, group=-1)
