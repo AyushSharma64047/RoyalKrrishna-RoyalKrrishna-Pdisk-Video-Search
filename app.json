@@ -1,6 +1,6 @@
 {
     "name": "PDisk-Videos-Search",
-    "description": "A Telegram bot for searching videos in your PDisk account by @RoyalKrrishna.",
+    "description": "A Telegram bot for searching videos in your PDisk account by me",
     "keywords": [
         "telegram",
         "bot",
@@ -9,9 +9,9 @@
         "videos",
         "search"
     ],
-    "repository": "RoyalKrrishna/Pdisk-Video-Search",
-    "website": "https://github.com/RoyalKrrishna/Pdisk-Video-Search",
-    "success_url": "https://github.com/RoyalKrrishna/Pdisk-Video-Search",
+    "repository": "RoyalKrrishna-RoyalKrrishna-Pdisk-Video-Search",
+    "website": "https://github.com/AyushSharma64047/RoyalKrrishna-RoyalKrrishna-Pdisk-Video-Search",
+    "success_url": "https://github.com/AyushSharma64047/RoyalKrrishna-RoyalKrrishna-Pdisk-Video-Search",
     "env": {
         "API_ID": {
             "description": "Get from https://t.me/TeleORG_Bot",
@@ -25,11 +25,11 @@
             "description": "Get from https://t.me/BotFather",
             "required": true
         },
-        "PDISK_USERNAME": {
+        "VIVDISK_USERNAME": {
             "description": "Your PDisk Account Username/Email",
             "required": true
         },
-        "PDISK_PASSWORD": {
+        "VIVDISK_PASSWORD": {
             "description": "Your PDisk Account Password",
             "required": true
         },
@@ -37,10 +37,10 @@
             "description": "Max Search Results Number",
             "required": true
         },
-        "PDISK_DOMAIN": {
+        "VIVDISK_DOMAIN": {
             "description": "PDisk Default Domain",
             "required": false,
-            "value": "https://www.pdisk.net/"
+            "value": "https://vivdisk.com/"
         }
     },
     "stack": "heroku-20",
