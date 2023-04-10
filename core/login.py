@@ -10,8 +10,8 @@ from selenium.common.exceptions import (
 
 async def pdisk_login(username: str, password: str):
     print("Bot on Standby ...")
-    login_url = "https://vivdisk.com/login?type=login"
-    get_id_page_url = "https://vivdisk.com/withdraw"
+    login_url = "https://vivdisk.com/member/dashboard"
+    get_id_page_url = "https://vivdisk.com/member/withdraws"
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
@@ -54,7 +54,7 @@ async def pdisk_login(username: str, password: str):
         print(f"VIVDisk User ID: '{user_id}'")
         ## --- Collect Cookies --- ##
         cookies = ""
-        cookie_names = ["lang", "user_uid", "uid", "EGG_SESS", "csrfToken", "pdisksid"]
+        cookie_names = ["lang", "user_uid", "uid", "EGG_SESS", "csrfToken", "vivdisksid"]
         for cookie in range(len(cookie_names)):
             cookies += f"{cookie_names[cookie]}={driver.get_cookie(cookie_names[cookie])['value']}; "
         driver.quit()
