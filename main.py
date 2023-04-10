@@ -19,7 +19,7 @@ from pyrogram.types import (
 from pyrogram.errors import (
     MessageNotModified
 )
-from core.search_video import search_pdisk_videos
+from core.search_video import search_vivdisk_videos
 
 if os.path.exists("configs.env"):
     load_dotenv("configs.env")
@@ -41,7 +41,7 @@ class Configs(object):
     VIVDISK_DOMAIN = os.environ.get("VIVDISK_DOMAIN", VIVDISK_DOMAIN[2])
 
 
-VIVDiskBot = Client(
+VIVDISKBot = Client(
     session_name=":memory:",
     api_id=Configs.API_ID,
     api_hash=Configs.API_HASH,
@@ -49,7 +49,7 @@ VIVDiskBot = Client(
 )
 
 
-@VIVDiskBot.on_message(filters.command("start") & ~filters.edited)
+@VIVDISKBot.on_message(filters.command("start") & ~filters.edited)
 async def start_handler(_, m: Message):
     await m.reply_text("**Hiii! 😀\n\n🔸I'm Simple Movie Search Bot 🔍\n\n🔹I Can Search Movies For You 🎥\n\n🔸Just Type /request Movie Name 👇🏻\n\n🔹Example - /request Dhoom 2 ✅\n\n🔸Porn Ban Here! 🔞\n\n🔹You Can Add Me To Groups 💬\n\n🔸Devloped By @sigma_male_007 🕵️**", quote=True)
 
