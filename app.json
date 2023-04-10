@@ -25,11 +25,11 @@
             "description": "Get from https://t.me/BotFather",
             "required": true
         },
-        "VIVDISK_USERNAME": {
+        "vivdisk_email": {
             "description": "Your PDisk Account Username/Email",
             "required": true
         },
-        "VIVDISK_PASSWORD": {
+        "vivdisk_PASSWORD": {
             "description": "Your PDisk Account Password",
             "required": true
         },
@@ -37,7 +37,7 @@
             "description": "Max Search Results Number",
             "required": true
         },
-        "VIVDISK_DOMAIN": {
+        "vivdisk_DOMAIN": {
             "description": "PDisk Default Domain",
             "required": false,
             "value": "https://vivdisk.com/"
