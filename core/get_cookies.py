@@ -1,32 +1,32 @@
 # (c) @RoyalKrrishna
 
-from core.login import VIVdisk_login
+from core.login import vivdisk_login
 
-VIVDisk_DB = {}
+vivisk_DB = {}
 
-async def get_cookies(username: str, password: str) -> str:
+async def get_cookies(email: str, password: str) -> str:
 
-    if not PDisk_DB:
+    if not vivdisk_DB:
 
-        user_id, cookies = await pdisk_login(username, password)
+        user_id, cookies = await vivdisk_login(email, password)
 
-        VIVDisk_DB["cookies"] = cookies
+        vivdisk_DB["cookies"] = cookies
 
-        VIVDisk_DB["user_id"] = user_id
+        vivdisk_DB["user_id"] = user_id
 
-        VIVDisk_DB["username"] = username
+        vivdisk_DB["email"] = email
 
-        VIVDisk_DB["password"] = password
+        vivdisk_DB["password"] = password
 
-    return VIVDisk_DB["cookies"]
+    return vivdisk_DB["cookies"]
 
 async def set_cookies(data: dict):
 
-    VIVDisk_DB["username"] = data["username"]
+    vivdisk_DB["email"] = data["email"]
 
-    VIVDisk_DB["password"] = data["password"]
+    vivdisk_DB["password"] = data["password"]
 
-    VIVDisk_DB["user_id"] = data["user_id"]
+    vivdisk_DB["user_id"] = data["user_id"]
 
-    VIVDisk_DB["cookies"] = data["cookies"]
+    vivdisk_DB["cookies"] = data["cookies"]
 
