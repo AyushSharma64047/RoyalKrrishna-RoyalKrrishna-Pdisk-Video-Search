@@ -11,7 +11,7 @@ from selenium.common.exceptions import (
 async def pdisk_login(username: str, password: str):
     print("Bot on Standby ...")
     login_url = "https://vivdisk.com/member/dashboard"
-    get_id_page_url = "https://vivdisk.com/member/withdraws"
+    get_id_page_url = "https://vivdisk.com/member/links"
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
