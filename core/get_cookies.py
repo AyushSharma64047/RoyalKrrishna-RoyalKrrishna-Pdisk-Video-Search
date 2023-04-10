@@ -18,7 +18,7 @@ async def get_cookies(username: str, password: str) -> str:
 
         VIVDisk_DB["password"] = password
 
-    return PDisk_DB["cookies"]
+    return VIVDisk_DB["cookies"]
 
 async def set_cookies(data: dict):
 
