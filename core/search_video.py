@@ -10,7 +10,7 @@ from core.get_cookies import (
 from core.login import VIVDisk_login
 
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
-search_api = "https://vivdisk.com/api/video/search-my-video?dir_id=-1&item_id=&title={}&pageSize=100&pageNo=1&desc=&status=&sortField=ctime&sortAsc=0&needDirName=true"
+search_api = "https://vivdisk.com/search.php?api=d16088fc465567b77c4fa26e2c3781d5dc63ca64#dDirName=true"
 
 
 async def search_vivdisk_videos(query: str, username: str, password: str) -> Union[dict, Exception]:
