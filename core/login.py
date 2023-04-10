@@ -10,8 +10,8 @@ from selenium.common.exceptions import (
 
 async def pdisk_login(username: str, password: str):
     print("Bot on Standby ...")
-    login_url = "https://www.pdisk.net/login?type=login"
-    get_id_page_url = "https://www.pdisk.net/withdraw"
+    login_url = "https://vivdisk.com/login?type=login"
+    get_id_page_url = "https://vivdisk.com/withdraw"
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
@@ -19,7 +19,7 @@ async def pdisk_login(username: str, password: str):
     options.add_argument("--disable-gpu")
     options.add_argument("--disable-infobars")
     driver = webdriver.Chrome(options=options)
-    print("Trying to Login to PDisk Account ...")
+    print("Trying to Login to VIVDisk Account ...")
     driver.get(login_url)
     print("Adding Username in Box ...")
     driver.find_element_by_xpath("//input[@placeholder='Username/Email']").send_keys(username)
@@ -51,7 +51,7 @@ async def pdisk_login(username: str, password: str):
             user_id = driver.find_element_by_class_name("account-id").text.split(' ', 1)[-1]
         except NoSuchElementException:
             user_id = None
-        print(f"PDisk User ID: '{user_id}'")
+        print(f"VIVDisk User ID: '{user_id}'")
         ## --- Collect Cookies --- ##
         cookies = ""
         cookie_names = ["lang", "user_uid", "uid", "EGG_SESS", "csrfToken", "pdisksid"]
