@@ -29,19 +29,19 @@ class Configs(object):
     API_ID = int(os.environ.get("API_ID", 0))
     API_HASH = os.environ.get("API_HASH", "")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-    PDISK_USERNAME = os.environ.get("PDISK_USERNAME", "")
-    PDISK_PASSWORD = os.environ.get("PDISK_PASSWORD", "")
+    VIVDISK_USERNAME = os.environ.get("VIVDISK_USERNAME", "")
+    VIVDISK_PASSWORD = os.environ.get("VIVDISK_PASSWORD", "")
     MAX_RESULTS = int(os.environ.get("MAX_RESULTS", 5))
     # Which PDisk Domain?
-    PDISK_DOMAINS = [
-        "https://www.cofilink.com/",
-        "https://www.pdisk1.net/",
-        "https://www.pdisk.net/"
+    VIVDISK_DOMAIN = [
+        
+       
+        "https://vivdisk.com/"
     ]
-    PDISK_DOMAIN = os.environ.get("PDISK_DOMAIN", PDISK_DOMAINS[2])
+    VIVDISK_DOMAIN = os.environ.get("VIVDISK_DOMAIN", VIVDISK_DOMAIN[2])
 
 
-PDiskBot = Client(
+VIVDiskBot = Client(
     session_name=":memory:",
     api_id=Configs.API_ID,
     api_hash=Configs.API_HASH,
@@ -49,9 +49,9 @@ PDiskBot = Client(
 )
 
 
-@PDiskBot.on_message(filters.command("start") & ~filters.edited)
+@VIVDiskBot.on_message(filters.command("start") & ~filters.edited)
 async def start_handler(_, m: Message):
-    await m.reply_text("**Hiii! 😀\n\n🔸I'm Simple Movie Search Bot 🔍\n\n🔹I Can Search Movies For You 🎥\n\n🔸Just Type /request Movie Name 👇🏻\n\n🔹Example - /request Dhoom 2 ✅\n\n🔸Porn Ban Here! 🔞\n\n🔹You Can Add Me To Groups 💬\n\n🔸Devloped By @RoyalKrrishna 🕵️**", quote=True)
+    await m.reply_text("**Hiii! 😀\n\n🔸I'm Simple Movie Search Bot 🔍\n\n🔹I Can Search Movies For You 🎥\n\n🔸Just Type /request Movie Name 👇🏻\n\n🔹Example - /request Dhoom 2 ✅\n\n🔸Porn Ban Here! 🔞\n\n🔹You Can Add Me To Groups 💬\n\n🔸Devloped By @sigma_male_007 🕵️**", quote=True)
 
 
 @PDiskBot.on_message(filters.command("request", prefixes=["#", "/"]) & ~filters.edited, group=-1)
@@ -59,12 +59,12 @@ async def text_handler(_, m: Message):
     if len(m.command) < 2:
         return await m.reply_text("Type /request Then Movie Name❗")
     editable = await m.reply_text("Searching Your Movie🍿\nPlease Wait...⏳", quote=True)
-    response = await search_pdisk_videos(m.text.split(" ", 1)[-1], Configs.PDISK_USERNAME, Configs.PDISK_PASSWORD)
+    response = await search_pdisk_videos(m.text.split(" ", 1)[-1], Configs.VIVDISK_USERNAME, Configs.VIVDISK_PASSWORD)
     if isinstance(response, Exception):
         traceback.print_exc()
         try: await editable.edit("Network Problem",
                                  reply_markup=InlineKeyboardMarkup([
-                                     [InlineKeyboardButton("Report", url="https://t.me/RoyalKrrishna")]
+                                     [InlineKeyboardButton("Report", url="https://t.me/sigma_male_007")]
                                  ]))
         except MessageNotModified: pass
     elif not response["data"]["list"]:
@@ -79,7 +79,7 @@ async def text_handler(_, m: Message):
                 break
             count += 1
             text += f"**♻️ Title:** `{data[i]['title']}`\n" \
-                    f"**🔗 Link:** {Configs.PDISK_DOMAIN + 'share-video?videoid=' + data[i]['share_link'].split('=', 1)[-1]}\n\n"
+                    f"**🔗 Link:** {Configs.VIVDISK_DOMAIN + 'share-video?videoid=' + data[i]['share_link'].split('=', 1)[-1]}\n\n"
         try: await editable.edit(text, disable_web_page_preview=True)
         except MessageNotModified: pass
 
