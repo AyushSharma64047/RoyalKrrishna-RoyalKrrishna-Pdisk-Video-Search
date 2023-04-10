@@ -19,10 +19,10 @@ async def pdisk_login(username: str, password: str):
     options.add_argument("--disable-gpu")
     options.add_argument("--disable-infobars")
     driver = webdriver.Chrome(options=options)
-    print("Trying to Login to VIVDisk Account ...")
+    print("Trying to Login to vivdisk Account ...")
     driver.get(login_url)
     print("Adding Username in Box ...")
-    driver.find_element_by_xpath("//input[@placeholder='Username/Email']").send_keys(username)
+    driver.find_element_by_xpath("//input[@placeholder='Email']").send_keys(email)
     print("Adding Password in Box ...")
     driver.find_element_by_xpath("//input[@placeholder='Password']").send_keys(password)
     print("Clicking Login Button ...")
@@ -51,7 +51,7 @@ async def pdisk_login(username: str, password: str):
             user_id = driver.find_element_by_class_name("account-id").text.split(' ', 1)[-1]
         except NoSuchElementException:
             user_id = None
-        print(f"VIVDisk User ID: '{user_id}'")
+        print(f"vivdisk User ID: '{user_id}'")
         ## --- Collect Cookies --- ##
         cookies = ""
         cookie_names = ["lang", "user_uid", "uid", "EGG_SESS", "csrfToken", "vivdisksid"]
